@@ -42,6 +42,7 @@
 #define SCROLL  7
 #define SYSTEM  8
 #define GAME    9
+#define GAME2   10
 
 &mt {
     flavor = "balanced";
@@ -85,6 +86,12 @@
             #binding-cells = <1>;
             bindings = <&to GAME &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_9";
+        };
+        to_layer_10: to_layer_10 {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&to GAME2 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            label = "TO_LAYER_10";
         };
 
         // 英語プロファイルへ切り替え (Layer 0へ & BT変更)
