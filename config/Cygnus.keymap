@@ -65,7 +65,7 @@
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&to BASE_EN &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
 
@@ -75,7 +75,7 @@
         to_layer_1: to_layer_1 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&to BASE_JP &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&to 1 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_1";
         };
 
@@ -84,13 +84,14 @@
         to_layer_9: to_layer_9 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&to GAME &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&to 9 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_9";
         };
+
         to_layer_10: to_layer_10 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&to GAME2 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_10";
         };
 
@@ -99,25 +100,25 @@
         to_prof0: to_prof0_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to BASE_EN &bt BT_SEL 0>;
+            bindings = <&to 0 &bt BT_SEL 0>;
         };
 
         to_prof1: to_prof1_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to BASE_EN &bt BT_SEL 1>;
+            bindings = <&to 0 &bt BT_SEL 1>;
         };
 
         to_prof2: to_prof2_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to BASE_EN &bt BT_SEL 2>;
+            bindings = <&to 0 &bt BT_SEL 2>;
         };
 
         to_prof3: to_prof3_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to BASE_EN &bt BT_SEL 3>;
+            bindings = <&to 0 &bt BT_SEL 3>;
         };
 
         // 日本語プロファイルへ切り替え (Layer 1へ & BT変更)
@@ -125,7 +126,7 @@
         to_prof4: to_prof4_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to BASE_JP &bt BT_SEL 4>;
+            bindings = <&to 1 &bt BT_SEL 4>;
         };
     };
 
@@ -169,10 +170,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R                             &kp T                                                           &kp Y        &kp U  &lt 7 I    &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F                             &kp G        &mkp LCLK                          &kp UNDERSCORE  &kp H        &kp J  &kp K      &kp L    &kp MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                             &kp B        &mkp RCLK                          &kp COLON       &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT EQUAL
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 SYSTEM INT_HENKAN  &lt 3 SPACE  &lt_to_layer_0 5 INT_MUHENKAN      &kp BACKSPACE   &lt 2 ENTER                             &kp DEL
+&kp Q             &kp W         &kp E         &kp R                        &kp T                                                           &kp Y        &kp U  &lt 7 I    &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F                        &kp G        &mkp LCLK                          &kp UNDERSCORE  &kp H        &kp J  &kp K      &kp L    &kp MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B        &mkp RCLK                          &kp COLON       &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT EQUAL
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 8 INT_HENKAN  &lt 3 SPACE  &lt_to_layer_0 5 INT_MUHENKAN      &kp BACKSPACE   &lt 2 ENTER                             &kp DEL
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -182,10 +183,10 @@
 
         default_layer_jp {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R                             &kp T                                                              &kp Y        &kp U  &lt 7 I    &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F                             &kp G        &mkp LCLK                          &kp JP_UNDERSCORE  &kp H        &kp J  &kp K      &kp L    &kp MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                             &kp B        &mkp RCLK                          &kp JP_COLON       &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT JP_EQUAL
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_1 SYSTEM INT_HENKAN  &lt 4 SPACE  &lt_to_layer_1 5 INT_MUHENKAN      &kp BACKSPACE      &lt 2 ENTER                             &kp DEL
+&kp Q             &kp W         &kp E         &kp R                        &kp T                                                              &kp Y        &kp U  &lt 7 I    &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F                        &kp G        &mkp LCLK                          &kp JP_UNDERSCORE  &kp H        &kp J  &kp K      &kp L    &kp MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B        &mkp RCLK                          &kp JP_COLON       &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT JP_EQUAL
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_1 8 INT_HENKAN  &lt 4 SPACE  &lt_to_layer_1 5 INT_MUHENKAN      &kp BACKSPACE      &lt 2 ENTER                             &kp DEL
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -263,10 +264,10 @@
 
         system_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                              &to_prof0  &to_prof1  &to_prof2  &to_prof3  &to_prof4
-&trans  &trans  &trans  &trans  &trans  &trans      &studio_unlock  &trans     &trans     &trans     &trans     &to_layer_9 A
-&trans  &trans  &trans  &trans  &trans  &trans      &bootloader     &trans     &trans     &trans     &trans     &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                                      &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans                              &to_prof0  &to_prof1  &to_prof2  &to_prof3       &to_prof4
+&trans  &trans  &trans  &trans  &trans  &trans      &studio_unlock  &trans     &trans     &trans     &to_layer_10 B  &to_layer_9 A
+&trans  &trans  &trans  &trans  &trans  &trans      &bootloader     &trans     &trans     &trans     &trans          &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                                           &bt BT_CLR_ALL
             >;
         };
 
@@ -277,6 +278,17 @@
 &kp LEFT_SHIFT  &kp A         &kp C         &kp V         &kp G  &kp LEFT_SHIFT      &kp LEFT_ALT  &kp TAB       &trans  &to_layer_0 A  &trans  &trans
 &kp LCTRL       &kp T         &kp LEFT_ALT  &kp SPACE     &kp D  &kp F               &trans        &kp LG(DOWN)                                 &trans
             >;
+        };
+
+        layer_10 {
+            bindings = <
+&kp Q             &kp W         &kp E         &kp R            &kp T                                                               &kp Y        &kp U  &lt 7 I    &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F            &kp G            &mkp LCLK                          &kp UNDERSCORE  &kp H        &kp J  &kp K      &kp L    &kp MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V            &kp B            &mkp RCLK                          &kp LG(DOWN)    &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT EQUAL
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &lt_to_layer_0 5 INT_MUHENKAN      &kp BACKSPACE   &lt 2 ENTER                             &to_layer_0 B
+            >;
+
+            sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
         };
     };
 };
